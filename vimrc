@@ -23,6 +23,11 @@ set expandtab                                   " use spaces, not tabs
 set backspace=indent,eol,start                  " backspace through everything in insert mode
 
 "" Searching
+
+" Default to using normal regexes by automatically inserting
+" \v before the any string you search for.
+nnoremap / /\v
+vnoremap / /\v
 set hlsearch                " highlight matches
 set incsearch               " incremental searching
 set ignorecase              " searches are case insensitive...
