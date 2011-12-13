@@ -22,6 +22,11 @@ set tabstop=4 softtabstop=4 shiftwidth=4        " a tab is four spaces
 set expandtab                                   " use spaces, not tabs
 set backspace=indent,eol,start                  " backspace through everything in insert mode
 
+"" Movement
+" Make the tab key match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
 "" Searching
 
 " Default to using normal regexes by automatically inserting
