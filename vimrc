@@ -49,6 +49,11 @@ set cpoptions+=$            " Show a dollar on the bounds for the change command
 set modelines=0             " Turn off modelines since I don't use them and they 
                             " have security exploits
 
+" Leader commands
+
+" Select the text that was just pasted
+nnoremap <leader>v V`]
+
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
