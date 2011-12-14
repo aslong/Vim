@@ -51,6 +51,9 @@ set modelines=0             " Turn off modelines since I don't use them and they
 
 " Leader commands
 
+" use comma as <leader> key
+let mapleader=","
+
 " Select the text that was just pasted
 nnoremap <leader>v V`]
 
