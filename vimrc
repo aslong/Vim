@@ -14,6 +14,7 @@ set relativenumber              " show relative line numbers in the left margin
 set ruler                       " show the line and column number of the cursor 
 set laststatus=2                " have every window have a status bar tied to it
 color wombat                    " default color scheme
+set background=light            " Ensure to have a light background
 set visualbell                  " don't beep
 set formatoptions=qrn1
 set colorcolumn=100             " display indicator at column 100 to avoid wide lines
