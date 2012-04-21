@@ -61,3 +61,7 @@ nnoremap <leader>v V`]
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" Settings for VimClojure
+let g:HighlightBuiltins=1      " Highlight Clojure's builtins
+let g:ParenRainbow=1           " Rainbow parentheses'!
