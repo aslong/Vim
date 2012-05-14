@@ -18,6 +18,7 @@ set background=light            " Ensure to have a light background
 set visualbell                  " don't beep
 set formatoptions=qrn1
 set colorcolumn=100             " display indicator at column 100 to avoid wide lines
+set t_Co=256                    "Explicitly tell vim the terminal supports 256 colors
 
 "" Whitespace
 set nowrap                                  " don't wrap lines
@@ -65,3 +66,6 @@ set directory=~/.vim/backup
 " Settings for VimClojure
 let g:HighlightBuiltins=1      " Highlight Clojure's builtins
 let g:ParenRainbow=1           " Rainbow parentheses'!
+
+" Settings for powerline
+let g:Powerline_symbols = 'fancy'
