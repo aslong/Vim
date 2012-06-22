@@ -22,7 +22,7 @@ set t_Co=256                    "Explicitly tell vim the terminal supports 256 c
 
 "" Whitespace
 set nowrap                                  " don't wrap lines
-set tabstop=4 softtabstop=4 shiftwidth=4    " a tab is four spaces
+set tabstop=2 softtabstop=2 shiftwidth=2    " a tab is two spaces
 set expandtab                               " use spaces, not tabs
 set backspace=indent,eol,start              " backspace through everything 
 
@@ -51,10 +51,24 @@ set cpoptions+=$            " Show a dollar on the bounds for the change command
 set modelines=0             " Turn off modelines since I don't use them and they 
                             " have security exploits
 
+" Show whitespace similar to textmate's whitespace
+set list
+set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+
+
 " Leader commands
 
 " use comma as <leader> key
 let mapleader=","
+
+" Splits manipulation mappings
+nnoremap <leader>ma <C-w>400>^
+nnoremap <leader>mi <C-w>400<
+nnoremap <leader>h <C-w>h<C-w>40>^
+nnoremap <leader>l <C-w>l<C-w>40>^
+
+" Search mappings
+nnoremap <leader><space> :nohl<cr>
 
 " Select the text that was just pasted
 nnoremap <leader>v V`]
