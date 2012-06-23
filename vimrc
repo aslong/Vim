@@ -73,9 +73,16 @@ nnoremap <leader><space> :nohl<cr>
 " Select the text that was just pasted
 nnoremap <leader>v V`]
 
+" Saving sessions mappings
+nnoremap <F2> :mksession! ~/vim_session <cr> " Quick write session with F2
+nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
+
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" Settings for Command-T
+nmap <silent> <Leader>o :CommandTBuffer<CR>
 
 " Settings for VimClojure
 let g:HighlightBuiltins=1      " Highlight Clojure's builtins
