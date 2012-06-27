@@ -62,10 +62,12 @@ set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 let mapleader=","
 
 " Splits manipulation mappings
-nnoremap <leader>ma <C-w>400>^
-nnoremap <leader>mi <C-w>400<
+nnoremap <leader>ma <C-w>400><C-w>400+^
+nnoremap <leader>mi <C-w>400<<C-w>400-
 nnoremap <leader>h <C-w>h<C-w>40>^
 nnoremap <leader>l <C-w>l<C-w>40>^
+nnoremap <leader>j <C-w>j<C-w>400+^
+nnoremap <leader>k <C-w>k<C-w>400+^
 
 " Search mappings
 nnoremap <leader><space> :nohl<cr>
