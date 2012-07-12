@@ -30,6 +30,8 @@ set backspace=indent,eol,start              " backspace through everything
 " Make the tab key match bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
+" Make tab map to auto-complete in insert mode
+imap <tab> <C-p>
 
 "" Searching
 
