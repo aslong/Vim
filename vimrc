@@ -17,7 +17,7 @@ color wombat                    " default color scheme
 set background=light            " Ensure to have a light background
 set visualbell                  " don't beep
 set formatoptions=qrn1
-set colorcolumn=100             " display indicator at column 100 to avoid wide lines
+set colorcolumn=120             " display indicator at column 120 to avoid wide lines
 set t_Co=256                    "Explicitly tell vim the terminal supports 256 colors
 
 "" Whitespace
@@ -84,6 +84,9 @@ nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" Easier command entry
+map ; :
 
 " Settings for Command-T
 nmap <silent> <Leader>o :CommandTBuffer<CR>
