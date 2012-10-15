@@ -63,6 +63,10 @@ set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 " use comma as <leader> key
 let mapleader=","
 
+" Easier command entry
+map ; :
+inoremap jj <ESC>
+
 " Splits manipulation mappings
 nnoremap <leader>ma <C-w>400><C-w>400+^
 nnoremap <leader>mi <C-w>400<<C-w>400-
@@ -84,9 +88,6 @@ nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Easier command entry
-map ; :
 
 " Settings for Command-T
 nmap <silent> <Leader>o :CommandTBuffer<CR>
