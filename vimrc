@@ -89,6 +89,53 @@ nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+function! Git_Repo_Cdup() " Get the relative path to repo root
+    "Ask git for the root of the git repo (as a relative '../../' path)
+    let git_top = system('git rev-parse --show-cdup')
+    let git_fail = 'fatal: Not a git repository'
+    if strpart(git_top, 0, strlen(git_fail)) == git_fail
+        " Above line says we are not in git repo. Ugly. Better version?
+        return ''
+    else
+        " Return the cdup path to the root. If already in root,
+        " path will be empty, so add './'
+        return './' . git_top
+    endif
+endfunction
+
+function! CD_Git_Root()
+    execute 'cd '.Git_Repo_Cdup()
+    let curdir = getcwd()
+    echo 'CWD now set to: '.curdir
+endfunction
+nnoremap <Leader>gr :call CD_Git_Root()<cr>
+
+" Define the wildignore from gitignore. Primarily for CommandT
+function! WildignoreFromGitignore()
+    silent call CD_Git_Root()
+    let gitignore = '.gitignore'
+    if filereadable(gitignore)
+        let igstring = ''
+        for oline in readfile(gitignore)
+            let line = substitute(oline, '\s|\n|\r', '', "g")
+            if line =~ '^#' | con | endif
+            if line == '' | con  | endif
+            if line =~ '^!' | con  | endif
+            if line =~ '/$' | let igstring .= "," . line . "**" | con | endif
+            let igstring .= "," . line
+        endfor
+        let execstring = "set wildignore=".substitute(igstring,'^,','',"g")
+        execute execstring
+        echo 'Wildignore defined from gitignore in: '.getcwd()
+        echo execstring
+    else
+        echo 'Unable to find gitignore'
+    endif
+endfunction
+
+nnoremap <Leader>wi :call WildignoreFromGitignore()<cr>
+nnoremap <Leader>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
+
 " Settings for Command-T
 nmap <silent> <Leader>o :CommandTBuffer<CR>
 
