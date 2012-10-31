@@ -67,6 +67,10 @@ let mapleader=","
 map ; :
 inoremap jj <ESC>
 
+" Splits mappings
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>s :sp<cr>
+
 " Splits manipulation mappings
 nnoremap <leader>ma <C-w>400><C-w>400+^
 nnoremap <leader>mi <C-w>400<<C-w>400-
@@ -79,7 +83,7 @@ nnoremap <leader>k <C-w>k<C-w>400+^
 nnoremap <leader><space> :nohl<cr>
 
 " Select the text that was just pasted
-nnoremap <leader>v V`]
+nnoremap <leader>pp V`]
 
 " Saving sessions mappings
 nnoremap <F2> :mksession! ~/vim_session <cr> " Quick write session with F2
@@ -103,6 +107,7 @@ function! Git_Repo_Cdup() " Get the relative path to repo root
     endif
 endfunction
 
+" Allows you to cd to the root of a git repo
 function! CD_Git_Root()
     execute 'cd '.Git_Repo_Cdup()
     let curdir = getcwd()
@@ -133,11 +138,11 @@ function! WildignoreFromGitignore()
     endif
 endfunction
 
-nnoremap <Leader>wi :call WildignoreFromGitignore()<cr>
-nnoremap <Leader>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
+nnoremap <leader>wi :call WildignoreFromGitignore()<cr>
+nnoremap <leader>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
 
-" Settings for Command-T
-nmap <silent> <Leader>o :CommandTBuffer<CR>
+" Mappings for Command-T
+nmap <silent> <leader>o :CommandTBuffer<CR>
 
 " Settings for VimClojure
 let g:HighlightBuiltins=1      " Highlight Clojure's builtins
