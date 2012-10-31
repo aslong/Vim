@@ -63,6 +63,9 @@ set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 " use comma as <leader> key
 let mapleader=","
 
+" Easier quit pane
+nnoremap <leader>q :q<cr>
+
 " Easier command entry
 map ; :
 inoremap jj <ESC>
@@ -150,3 +153,29 @@ let g:ParenRainbow=1           " Rainbow parentheses'!
 
 " Settings for powerline
 let g:Powerline_symbols = 'fancy'
+
+" Text manipulation
+
+  " Align all selected code on '=' sign
+function! AlignAssign() range
+
+  let max_col = 0
+  for text in getline(a:firstline, a:lastline)
+    let pos = match(text, '\s*=')
+    if pos != -1
+      let max_col = max([max_col, pos])
+    endif
+  endfor
+
+  for line in range(a:firstline, a:lastline)
+    let text = getline(line)
+    let pos  = match(text, '\s*=')
+    if pos != -1
+      call setpos('.', [0, line, pos+1, 0])
+      execute "normal" "i \e" . "dt=" . (max_col - pos + 1) . "i "
+    endif
+  endfor
+
+endfunction
+
+vnoremap <leader>a :call AlignAssign()<cr>
