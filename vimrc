@@ -84,6 +84,10 @@ nnoremap <leader>q :q<cr>
 inoremap <C-u> <esc>lwbvwUel<esc>i
 nnoremap <C-u> wbvwUel<esc>
 
+" Better end and beginning of line movements
+nnoremap <leader>H ^
+nnoremap <leader>L $
+
 " Easier command entry
 noremap ; :
 inoremap jj <ESC>
