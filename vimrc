@@ -63,6 +63,13 @@ set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 " use comma as <leader> key
 let mapleader=","
 
+" Move line up or down
+nnoremap - ddp
+nnoremap _ ddkP
+
+" Easier file reload
+nnoremap <leader>r :e %<cr>
+
 " Easier quit pane
 nnoremap <leader>q :q<cr>
 
