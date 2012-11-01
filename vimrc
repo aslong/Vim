@@ -75,6 +75,7 @@ nnoremap <leader>q :q<cr>
 
 " Easier upper case word currently under cursor
 inoremap <C-u> <esc>lwbvwUel<esc>i
+nnoremap <C-u> wbvwUel<esc>
 
 " Easier command entry
 map ; :
@@ -126,7 +127,7 @@ function! CD_Git_Root()
     let curdir = getcwd()
     echo 'CWD now set to: '.curdir
 endfunction
-nnoremap <Leader>gr :call CD_Git_Root()<cr>
+nnoremap <leader>gr :call CD_Git_Root()<cr>
 
 " Define the wildignore from gitignore. Primarily for CommandT
 function! WildignoreFromGitignore()
