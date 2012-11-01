@@ -67,6 +67,10 @@ let mapleader=","
 nnoremap - ddp
 nnoremap _ ddkP
 
+" Easier editing of this file
+nnoremap <leader>ev :vsp $MYVIMRC<cr>
+nnoremap <leader>sev :source $MYVIMRC<cr>
+
 " Easier file reload
 nnoremap <leader>r :e %<cr>
 
