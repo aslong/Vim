@@ -90,7 +90,7 @@ inoremap jj <ESC>
 
 " Splits mappings
 nnoremap <leader>v :vsp<cr>
-nnoremap <leader>s :sp<cr>
+nnoremap <leader>b :sp<cr>
 
 " Splits manipulation mappings
 nnoremap <leader>ma <C-w>400><C-w>400+^
