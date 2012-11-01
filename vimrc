@@ -73,6 +73,9 @@ nnoremap <leader>r :e %<cr>
 " Easier quit pane
 nnoremap <leader>q :q<cr>
 
+" Easier upper case word currently under cursor
+inoremap <C-u> <esc>lwbvwUel<esc>i
+
 " Easier command entry
 map ; :
 inoremap jj <ESC>
