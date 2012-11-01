@@ -57,6 +57,9 @@ set modelines=0             " Turn off modelines since I don't use them and they
 set list
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 
+" Abbreviations
+iabbrev @@ aslong87@gmail.com
+iabbrev ccopy Copyright 2012 Andrew Long, all rights reserved.
 
 " Leader commands
 
