@@ -90,7 +90,7 @@ nnoremap <leader>L $
 
 " Easier command entry
 noremap ; :
-inoremap jj <ESC>
+inoremap kj <ESC>
 
 " Splits mappings
 nnoremap <leader>v :vsp<cr>
