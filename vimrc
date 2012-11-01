@@ -31,7 +31,7 @@ set backspace=indent,eol,start              " backspace through everything
 nnoremap <tab> %
 vnoremap <tab> %
 " Make tab map to auto-complete in insert mode
-imap <tab> <C-p>
+inoremap <tab> <C-p>
 
 "" Searching
 
@@ -78,7 +78,7 @@ inoremap <C-u> <esc>lwbvwUel<esc>i
 nnoremap <C-u> wbvwUel<esc>
 
 " Easier command entry
-map ; :
+noremap ; :
 inoremap jj <ESC>
 
 " Splits mappings
@@ -156,7 +156,7 @@ nnoremap <leader>wi :call WildignoreFromGitignore()<cr>
 nnoremap <leader>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
 
 " Mappings for Command-T
-nmap <silent> <leader>o :CommandTBuffer<CR>
+nnoremap <silent> <leader>o :CommandTBuffer<CR>
 
 " Settings for VimClojure
 let g:HighlightBuiltins=1      " Highlight Clojure's builtins
