@@ -66,6 +66,9 @@ iabbrev ccopy Copyright 2012 Andrew Long, all rights reserved.
 " use comma as <leader> key
 let mapleader=","
 
+" Quick CoffeeCompile
+nnoremap <leader>cc :CoffeeCompile<cr>
+
 " Move line up or down
 nnoremap - ddp
 nnoremap _ ddkP
@@ -169,6 +172,7 @@ nnoremap <leader>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
 
 " Mappings for Command-T
 nnoremap <silent> <leader>o :CommandTBuffer<CR>
+nnoremap <silent> <leader>ctf :CommandTFlush<CR>
 
 " Settings for VimClojure
 let g:HighlightBuiltins=1      " Highlight Clojure's builtins
