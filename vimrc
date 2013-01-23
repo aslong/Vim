@@ -96,6 +96,9 @@ noremap ; :
 inoremap kj <esc>
 inoremap <esc> <nop>
 
+" Tabs mappings
+nnoremap <leader>n :tabnew<cr>
+
 " Splits mappings
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>b :sp<cr>
