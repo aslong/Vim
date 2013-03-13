@@ -8,6 +8,9 @@ set encoding=utf-8
 " Load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
+"" Setting to make crontab editing work by not saving a backup file
+au! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
+
 "" Editor display settings
 set showcmd                     " display incomplete commands
 set relativenumber              " show relative line numbers in the left margin
@@ -98,6 +101,8 @@ inoremap <esc> <nop>
 
 " Tabs mappings
 nnoremap <leader>n :tabnew<cr>
+nnoremap <leader>l gt
+nnoremap <leader>h gT
 
 " Splits mappings
 nnoremap <leader>v :vsp<cr>
@@ -106,8 +111,6 @@ nnoremap <leader>b :sp<cr>
 " Splits manipulation mappings
 nnoremap <leader>ma <C-w>400><C-w>400+^
 nnoremap <leader>mi <C-w>400<<C-w>400-
-nnoremap <leader>h <C-w>h<C-w>40>^
-nnoremap <leader>l <C-w>l<C-w>40>^
 nnoremap <leader>j <C-w>j<C-w>400+^
 nnoremap <leader>k <C-w>k<C-w>400+^
 
@@ -190,14 +193,14 @@ let g:Powerline_symbols = 'fancy'
 function! AlignAssign() range
 
   let max_col = 0
-  for text in getline(a:firstline, a:lastline)
+  for text in getline('<, '>)
     let pos = match(text, '\s*=')
     if pos != -1
       let max_col = max([max_col, pos])
     endif
   endfor
 
-  for line in range(a:firstline, a:lastline)
+  for line in range('<, '>)
     let text = getline(line)
     let pos  = match(text, '\s*=')
     if pos != -1
