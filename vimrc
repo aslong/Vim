@@ -72,6 +72,9 @@ let mapleader=","
 " Quick CoffeeCompile
 nnoremap <leader>cc :CoffeeCompile<cr>
 
+" NERDTree FilePane
+nnoremap <leader>n :NERDTreeToggle<CR>
+
 " Move line up or down
 nnoremap - ddp
 nnoremap _ ddkP
@@ -100,7 +103,7 @@ inoremap kj <esc>
 inoremap <esc> <nop>
 
 " Tabs mappings
-nnoremap <leader>n :tabnew<cr>
+"nnoremap <leader>n :tabnew<cr>
 nnoremap <leader>l gt
 nnoremap <leader>h gT
 
