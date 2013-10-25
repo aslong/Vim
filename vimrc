@@ -117,8 +117,9 @@ nnoremap <leader>mi <C-w>400<<C-w>400-
 nnoremap <leader>j <C-w>j<C-w>400+^
 nnoremap <leader>k <C-w>k<C-w>400+^
 
-" Search mappings
-nnoremap <leader><space> :nohl<cr>
+" Search and spelling mappings
+nnoremap <leader><space> :nohl<cr>:set nospell<cr>
+nnoremap <leader>sp :set spell spelllang=en_us<cr>
 
 " Select the text that was just pasted
 nnoremap <leader>pp V`]
