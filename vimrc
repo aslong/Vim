@@ -2,8 +2,13 @@
 call pathogen#infect()  " loads pathogen to allow easy management of plugins
 
 set nocompatible
-syntax enable
 set encoding=utf-8
+
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+syntax on
+syntax enable
 
 " Load the plugin and indent settings for the detected filetype
 filetype plugin indent on
